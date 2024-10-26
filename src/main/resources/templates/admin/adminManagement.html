@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css" /> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+
+    <style>
+        body {
+            padding-top: 56px;
+            /* height: 1600px; */
+        }
+    </style>
+</head>
+<body>
+<!-- fix-top agar navbar tetap bagian atas walaupun di scroll -->
+<!-- Navigasi bar start-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container-fluid">
+        <!-- menambahkan logo -->
+        <a class="navbar-brand" href=""><img src="/images/logo.png" alt="" style="height: 60px" /></a>
+        <!-- button akan ditampilkan ketika beralih layar ke yang lebih kecil -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- ketika button diatas diklik akan mengarahkan ke elemen div disini -->
+        <!-- untuk class collapse untuk mengelompokan atau menyembunyikan elemen navbar ketika beralih media atau layar(responsive) -->
+        <!-- elemen div dibawah untuk menu -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-lg-auto" style="margin-left: 0; padding-left: 0">
+
+                <li class="nav-item me-5">
+                    <a class="nav-link" href="/admin/adminHome">Home</a>
+                </li>
+                <li class="nav-item me-5">
+                    <a class="nav-link" href="/admin/adminAddC">Add catagory</a>
+                </li>
+                <li class="nav-item me-5">
+                    <a class="nav-link" href="/admin/adminAdd">Add item</a>
+                </li>
+                <li class="nav-item me-5">
+                    <a class="nav-link" href="/admin/adminManagement">Items management</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/admin/logout" class="btn btn-danger">Log out</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Navigasi bar end -->
+<!-- Cart Start -->
+<section style="padding-top: 40px; width: 100%">
+    <!-- Manage Items start -->
+    <div class="row" style="height: 300px">
+        <div class="col-12 bg-light">
+            <div class="row ms-2 mt-2">
+                <div class="col">
+                    <div class="row mt-3 mb-3">
+                        <div class="col-11"><h2>Manage Items</h2></div>
+                        <div class="col-1"><img src="/images/edit.png" style="width: 48px" /></div>
+                    </div>
+                </div>
+            </div>
+            <!-- Cart start -->
+            <div th:each="item : ${itemList}" class="row ms-2 mt-2 mb-4">
+                <div class="col-md-3">
+                    <img th:src="${item.itemPic}" class="img-fluid" style="width: 80%; height: auto; max-height: 200px; object-fit: cover;" alt="Gambar" />
+                </div>
+                <div class="col-md-9">
+                    <h3>Product Name: <span th:text="${item.name}"></span></h3>
+<!--                    <br>-->
+                    <span>Price: $<span th:text="${item.price}"></span></span>
+                    <p>Brand: <span th:text="${item.brandName}"></span></p>
+                    <p>Stock: <span th:text="${item.stock}"></span></p>
+                    <button class="btn btn-warning" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample" th:attr="data-bs-target='#offcanvasExample' + ${item.item_id}">Edit</button>
+                    <!-- Tombol Remove yang menunjukkan modal -->
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" th:attr="data-bs-target='#exampleModal' + ${item.item_id}">Remove</button>
+                </div>
+            </div>
+            <!-- Cart end -->
+        </div>
+    </div>
+    <!-- Manage Items end -->
+    <!-- Off canvas start -->
+    <div th:each="item : ${itemList}" class="offcanvas offcanvas-end" th:id="'offcanvasExample' + ${item.item_id}" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Edit Product</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <p>Please fullfill this form to edit item</p>
+            <!-- Anda bisa menambahkan konten lainnya di sini -->
+                <form th:action="@{/item/editItem}" method="post">
+                    <div class="mb-3">
+                        <label  class="form-label">Item Name</label>
+                        <input type="text" class="form-control" name="editItemName" th:value="${item.name}"/>
+                    </div>
+                    <div class="mb-3">
+                        <label  class="form-label">Brand</label>
+                        <p><strong th:text="${item.brandName}"></strong></p>
+                    </div>
+                    <div class="mb-3">
+                        <label  class="form-label">Stock</label>
+                        <input type="text" class="form-control" name="editItemStock" th:value="${item.stock}"/>
+                    </div>
+                    <div class="mb-3">
+                        <label  class="form-label">Price</label>
+                        <input type="text" class="form-control" name="editItemPrice" th:value="${item.price}"/>
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    </div>
+                    <input type="hidden" name="itemId" th:value="${item.item_id}" />
+                    <button type="submit" class="btn btn-primary">Submit edit</button>
+                </form>
+        </div>
+    </div>
+    <!-- Off canvas end -->
+    <!-- Modal start -->
+    <div th:each="item : ${itemList}" class="modal fade" th:id="'exampleModal' + ${item.item_id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Please confirmation</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Are you sure want to remove <strong th:text="${item.name}"></strong>?
+<!--                    <strong th:text="${item.item_id}"></strong>?-->
+<!--                    <strong th:text="${item.stock}"></strong>?-->
+<!--                    <strong th:text="${item.price}"></strong>?-->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <form th:action="@{/item/deleteItem}" method="post">
+                        <input type="hidden" name="itemId" th:value="${item.item_id}" />
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal remove -->
+</section>
+<!-- Cart End -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<!-- <script src="js/bootstrap.bundle.min.js"></script> -->
+</body>
+</html>
+
+<!-- cari font, icon : fontawesome.com -->

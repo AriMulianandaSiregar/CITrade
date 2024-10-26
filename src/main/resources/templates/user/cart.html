@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <style></style>
+</head>
+<body>
+<!-- Navbar Start -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top rounded-bottom-3" style="background-color: #f0f3f7">
+    <div class="container-fluid">
+        <!-- menambahkan logo -->
+        <a class="navbar-brand ms-4" href="/user/home"><img src="/images/logo.png" alt="" style="height: 60px" /></a>
+        <!-- button akan ditampilkan ketika beralih layar ke yang lebih kecil -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-lg-auto" style="margin-left: 0; padding-left: 0">
+
+                <li class="nav-item me-5">
+                    <a href="/user/history"><img src="/images/history.png" style="height: 40px; width: 40px" /></a>
+                </li>
+                <li class="nav-item me-5">
+                    <a href="/user/cart"><img src="/images/cartlogo.png" style="height: 40px; width: 40px" /></a>
+                </li>
+                <div class="navbar-line" style="border-left: 3px solid #000000; margin: 0 16px"></div>
+                <li class="nav-item">
+                    <a href="/user/account"><img src="/images/account.png" style="height: 40px; width: 40px; border-radius: 50%" /></a>
+                </li>
+                <li class="nav-item me-4">
+                    <a class="nav-link" href="/user/account">
+                        <strong th:text="${userinformation.getUsername()}"></strong>
+                    </a>
+                    <!-- <td th:text="${userinfo.nickname}"></td> -->
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Navbar End -->
+<!-- Discount start -->
+<section style="padding-top: 96px; width: 100%">
+    <div class="row bg-dark text-center pt-3 pb-3" style="height: max-content">
+        <div class="col-12 fw-semibold fs-5" style="color: #f0f0f0"><span>UA SEMI-ANNUAL EVENT IS ON: UP TO 50% OFF. </span> <a href="#" style="color: #aaaaaa">See details.</a></div>
+    </div>
+</section>
+<!-- Discount end -->
+
+<!-- Cart Start -->
+<section style="padding-top: 0px; width: 100%">
+    <div class="row" style="height: 300px">
+        <!-- Left side start -->
+        <div class="col-8 bg-light">
+            <div class="row mb-3 mt-3">
+                <div class="col-8 text-center">
+                    <div class="row-6">Register membership now & get FREE standard shipping. Member only</div>
+                    <div class="row-2"><a href="">See the terms and conditions</a></div>
+                    <div class="row-4">
+                        <button type="button" class="btn btn-success">Apply For Membership</button>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="row">
+                        <span><img src="/images/cart2.png" style="height: 28px; width: 28px; margin-right: 10px" />Faster checkout</span>
+                    </div>
+                    <div class="row">
+                        <span><img src="/images/return.png" style="height: 28px; width: 28px; margin-right: 10px" />Easier returns and exchanges</span>
+                    </div>
+                    <div class="row">
+                        <span><img src="/images/tracking.png" style="height: 28px; width: 28px; margin-right: 10px" />Quick order information and tracking</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Border start -->
+            <div style="width: 96%; border: none; border-top: 2px solid black; margin: 0 auto"></div>
+            <!-- Border end -->
+            <div class="row ms-2 mt-2">
+                <div class="col"><h2>Your Cart (+)</h2></div>
+            </div>
+            <!-- Cart start -->
+            <div th:each="transactionDTOs : ${unpaidTransactionList}" class="row ms-2 mt-2 mb-4">
+
+                    <div class="col-md-3">
+                        <!--                    <img src="/images/showroom.jpg" class="img-fluid" alt="Gambar" />-->
+                        <img th:src="${transactionDTOs.itemPic}" class="img-fluid" style="width: 80%; height: auto; max-height: 200px; object-fit: cover;" alt="Gambar" />
+                    </div>
+                    <div class="col-md-9">
+                        <h4>Product Name: <span th:text="${transactionDTOs.name}"></span></h4>
+                        <span>Price: $<span th:text="${transactionDTOs.price}"></span></span>
+                        <br>
+                        <span>Date: <span th:text="${transactionDTOs.transactionDate}"></span></span>
+                        <p>Payment Status: <span th:text="${transactionDTOs.paymentStatus}"></span></p>
+                        <form th:action="@{/transaction/payNow}" method="post">
+                        <input type="hidden" name="transactionId" th:value="${transactionDTOs.transaction_id}" />
+                        <button type="submit" class="btn btn-success">Pay now</button>
+                        </form>
+                    </div>
+            </div>
+            <!-- Cart end -->
+        </div>
+        <!-- Left side end -->
+        <!-- Right side start -->
+        <div class="col-4" style="background-color: #f0f0f0">
+            <div class="row mt-5 mb-3 ms-4"><h3>Order summary</h3></div>
+            <div class="row mb-4 ms-4 me-4">
+                <div class="col-8">
+                    <div class="row fw-semibold"><span>Item Name:</span></div>
+                    <div class="row fw-semibold"><span>Subtotal(1):</span></div>
+                    <div class="row fw-semibold"><span>Estimated tax:</span></div>
+                    <div class="row fw-semibold"><span>Estimated shipping:</span></div>
+                    <div class="row fw-semibold"><span>Date transaction:</span></div>
+                    <div class="row fw-semibold"><span>Payment Status:</span></div>
+                </div>
+                <div class="col-4">
+                    <div class="row fw-semibold"><span>[<span th:text="${transactionInformation != null ? transactionInformation.name : null}"></span>]</span></div>
+                    <div class="row fw-semibold"><span>$<span th:text="${transactionInformation != null ? transactionInformation.price : null}"></span></span></div>
+                    <div class="row fw-semibold"><span>$0</span></div>
+                    <div class="row fw-semibold"><span>$0</span></div>
+                    <div class="row fw-semibold"><span th:text="${transactionInformation != null ? transactionInformation.transactionDate : null}">-</span></div>
+                    <div class="row fw-semibold"><span th:text="${transactionInformation != null ? transactionInformation.paymentStatus : null}">-</span></div>
+                </div>
+            </div>
+            <!-- Border start -->
+            <div class="row mb-4 ms-4 me-4">
+                <div class="col">
+                    <div style="width: 100%; border: none; border-top: 2px solid black; margin: 0 auto"></div>
+                </div>
+            </div>
+            <!-- Border end -->
+            <div class="row mb-4 ms-4 me-4">
+                <div class="col-8"><h4>Estimated total:</h4></div>
+                <div class="col-4 fw-semibold fs-5"><span>$<span th:text="${transactionInformation != null ? transactionInformation.price : null}"></span></span></div>
+                <span>4 interest-free payments you must subscribe.</span>
+                <a href="#" style="color: black">learn more</a>
+            </div>
+            <!-- Border start -->
+            <div class="row mb-4 ms-4 me-4">
+                <div class="col">
+                    <div style="width: 100%; border: none; border-top: 2px solid black; margin: 0 auto"></div>
+                    <div class="row mb-1" th:if="${errmsg != null}">
+                        <span class="text-danger" th:text="${errmsg}"></span>
+                    </div>
+                </div>
+            </div>
+            <!-- Border end -->
+
+            <div class="row mb-4 ms-4 me-4">
+                <div class="d-grid gap-2 col-12 mx-auto">
+                    <div th:if="${transactionInformation != null}">
+                        <form th:action="@{/transaction/checkout}" method="post">
+                            <input type="hidden" name="transactionId" th:value="${transactionInformation.transaction_id}" />
+                            <button class="btn btn-danger" type="submit">Checkout</button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-4 ms-4 me-4">
+                <div class="col-3"><img src="/images/paypal.png" /></div>
+                <div class="col-3"><img src="/images/mastercard.png" /></div>
+                <div class="col-3"><img src="/images/visa.png" /></div>
+                <div class="col-3"><img src="/images/american-express.png" /></div>
+            </div>
+        </div>
+        <!-- Right side end -->
+    </div>
+</section>
+<!-- Cart End -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

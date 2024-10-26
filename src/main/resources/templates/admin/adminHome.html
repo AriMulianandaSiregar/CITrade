@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css" /> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+
+    <style>
+        body {
+            padding-top: 56px;
+            height: 1600px;
+        }
+        .jumbotron {
+            text-shadow: black 1px 1px;
+        }
+
+        .service-style {
+            margin-top: 15px;
+            background-color: #fafbfc;
+        }
+        .text-blue {
+            color: #dc3545;
+        }
+        h2:before,
+        h2:after {
+            background-color: #dc3545;
+            content: "";
+            display: inline-block;
+            height: 1px;
+            position: relative;
+            vertical-align: middle;
+            width: 20%;
+        }
+        h2::before {
+            right: 0.5rem;
+            margin-left: -50%;
+        }
+        h2::after {
+            left: 0.5rem;
+            margin-right: -50%;
+        }
+        .button-sekunder {
+            background-color: transparent;
+            border-color: #dbdbdb;
+            color: #dc3545;
+        }
+        .button-sekunder:hover {
+            background-color: #dc3545;
+            border-color: #dbdbdb;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+<!-- fix-top agar navbar tetap bagian atas walaupun di scroll -->
+<!-- Navigasi bar start-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container-fluid">
+        <!-- menambahkan logo -->
+        <a class="navbar-brand" href=""><img src="/images/logo.png" alt="" style="height: 60px" /></a>
+        <!-- button akan ditampilkan ketika beralih layar ke yang lebih kecil -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- ketika button diatas diklik akan mengarahkan ke elemen div disini -->
+        <!-- untuk class collapse untuk mengelompokan atau menyembunyikan elemen navbar ketika beralih media atau layar(responsive) -->
+        <!-- elemen div dibawah untuk menu -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-lg-auto" style="margin-left: 0; padding-left: 0">
+
+                <li class="nav-item me-5">
+                    <a class="nav-link" href="/admin/adminHome">Home</a>
+                </li>
+                <li class="nav-item me-5">
+                    <a class="nav-link" href="/admin/adminAddC">Add catagory</a>
+                </li>
+                <li class="nav-item me-5">
+                    <a class="nav-link" href="/admin/adminAdd">Add item</a>
+                </li>
+                <li class="nav-item me-5">
+                    <a class="nav-link" href="/admin/adminManagement">Items management</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/admin/logoutS" class="btn btn-danger">Log out</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- Navigasi bar end -->
+
+<!-- Service -->
+<section id="service" class="container-fluid service-style">
+    <div class="row text-center">
+        <div class="col-12 mb-4"><h2 class="display-4" style="margin-top: 8rem !important">Why you should visit our company?</h2></div>
+        <div class="col-12 col-sm-6 col-lg-3">
+            <span class="fa-stack fa-2x"><i class="fas fa-circle fa-stack-2x text-blue"> </i> <i class="fa-solid fa-list fa-stack-1x text-white"></i></span>
+
+            <h3 class="mt-4 text-danger">Good facility</h3>
+            <p>Provide the convinient fasilities</p>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+            <span class="fa-stack fa-2x"><i class="fas fa-circle fa-stack-2x text-blue"> </i> <i class="fa-solid fa-stack-1x fa-money-bill-wave text-white"></i></span>
+
+            <h3 class="mt-4 text-danger">Affordable</h3>
+            <p>Affordable price compared to another company</p>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+            <span class="fa-stack fa-2x"><i class="fas fa-circle fa-stack-2x text-blue"> </i> <i class="fa-solid fa-stack-1x fa-user-tie text-white"></i></span>
+
+            <h3 class="mt-4 text-danger">proficient service</h3>
+            <p>Provide service from professional employees</p>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+            <span class="fa-stack fa-2x"><i class="fas fa-circle fa-stack-2x text-blue"> </i> <i class="fa-solid fa-stack-1x fa-shield text-white"></i></span>
+
+            <h3 class="mt-4 text-danger">Assurance</h3>
+            <p>Safe for buyer</p>
+        </div>
+    </div>
+</section>
+
+<!-- Product -->
+<section id="product" class="container">
+    <div class="row text-center">
+        <div class="col-12 pb-4">
+            <h2 class="display-4 text-center mb-5" style="margin-top: 8rem !important">Our Product</h2>
+        </div>
+        <div class="col-md-3 mb-4">
+            <!-- buat card disini -->
+            <!-- min-height: 250px agar biarpun tulisan pada setiap card berbeda, namun tinggi minimalnya tetap sama -->
+            <div class="card">
+                <!-- <div class="card-header">Header</div> -->
+                <div class="card-body" style="min-height: 520px">
+                    <h4 class="card-title">Enhancing Global Reach with Export-Import Web Services</h4>
+                    <p class="card-text">
+                        Utilizing export-import web services enables businesses to extend their reach beyond local markets, tapping into a global customer base. These platforms simplify the complexities of international trade by offering
+                        streamlined processes for shipping, customs, and compliance, ensuring that products reach their destinations efficiently and legally.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn button-sekunder">Read the detail</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <!-- buat card disini -->
+            <div class="card">
+                <!-- <div class="card-header">Header</div> -->
+                <div class="card-body" style="min-height: 520px">
+                    <h4 class="card-title">Boosting Efficiency and Reducing Costs in International Trade</h4>
+                    <p class="card-text">
+                        Export-import web services offer significant cost savings by optimizing logistics and supply chain management. Automated systems reduce manual errors and paperwork, allowing businesses to focus on core activities. Moreover,
+                        competitive shipping rates and real-time tracking enhance operational efficiency and reduce overall expenses.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn button-sekunder">Read the detail</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <!-- buat card disini -->
+            <div class="card">
+                <!-- <div class="card-header">Header</div> -->
+                <div class="card-body" style="min-height: 520px">
+                    <h4 class="card-title">Ensuring Compliance and Security in Global Transactions</h4>
+                    <p class="card-text">
+                        One of the key advantages of using export-import web services is the assurance of compliance with international trade regulations. These platforms provide up-to-date information on tariffs, duties, and trade policies,
+                        ensuring that businesses avoid legal pitfalls. Additionally, advanced security measures protect sensitive data and financial transactions, fostering trust and reliability in global operations.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn button-sekunder">Read the detail</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 mb-4">
+            <!-- buat card disini -->
+            <div class="card">
+                <!-- <div class="card-header">Header</div> -->
+                <div class="card-body" style="min-height: 520px">
+                    <h4 class="card-title">Gaining Insights with Advanced Reporting</h4>
+                    <p class="card-text">
+                        Export-import web services come equipped with powerful analytics tools that provide valuable insights into market trends and business performance. By leveraging these data-driven insights, businesses can make informed
+                        decisions, identify new opportunities, and optimize their strategies for better outcomes. Detailed reporting features also help in tracking performance metrics and assessing the effectiveness of trade operations.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    <a href="#" class="btn button-sekunder">Read the detail</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About -->
+<section id="about" class="bg-light">
+    <div class="container-fluid">
+        <h2 class="display-4 text-center mb-5" style="margin-top: 8rem !important">About Us</h2>
+        <!-- no-gutters agar antar gambar tidak ada jarak(menyatu) -->
+        <div class="row no-gutters">
+            <div class="col-12 col-md-6">
+                <div style="padding: 16px">
+                    <h3 class="display-4 text-center text-danger mt-3 mb-3">Professional</h3>
+                    <p style="text-align: justify">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia explicabo, vero, dolore reiciendis id ex harum libero asperiores, alias aperiam molestiae nam placeat veniam molestias magni exercitationem reprehenderit
+                        fugit praesentium porro dicta totam? Odit nulla autem ducimus voluptatem dicta eius, reiciendis assumenda ipsa illum iste rem cupiditate esse molestias deleniti.
+                    </p>
+                    <div class="col-12 pt-3 text-center">
+                        <a href="#" class="btn bg-danger btn-lg text-white">More information</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div style="background-image: url('/images/homepic3.jpg'); background-repeat: no-repeat; height: 440px"></div>
+            </div>
+
+            <div class="col-12 col-md-6">
+                <div style="background-image: url('/images/homepic2.jpg'); background-repeat: no-repeat; height: 440px"></div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div style="padding: 16px">
+                    <h3 class="display-4 text-center text-danger mt-3 mb-3">Trusted</h3>
+                    <p style="text-align: justify">
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia explicabo, vero, dolore reiciendis id ex harum libero asperiores, alias aperiam molestiae nam placeat veniam molestias magni exercitationem reprehenderit
+                        fugit praesentium porro dicta totam? Odit nulla autem ducimus voluptatem dicta eius, reiciendis assumenda ipsa illum iste rem cupiditate esse molestias deleniti.
+                    </p>
+                    <div class="col-12 pt-3 text-center">
+                        <a href="#" class="btn bg-danger btn-lg text-white">More information</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="container-fluid text-center" style="background-color: #e9f2eb; padding-top: 24px">
+    <h2 class="display-4 pb-4" style="margin-top: 8rem !important">Contact Us Now!</h2>
+    <p class="lead pb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, alias.</p>
+    <a href="#" class="btn btn-danger btn-lg mb-4">Whatsapp</a>
+</section>
+
+<!-- Footer -->
+<footer class="bg-dark">
+    <div class="col-lg-12" style="padding: 24px">
+        <div style="text-align: center">
+            <a href="#" class="text-blue" style="padding: 8px"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="text-blue" style="padding: 8px"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-blue" style="padding: 8px"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p class="text-center text-secondary">Copyright & copy supercar 2024</p>
+    </div>
+</footer>
+
+<!-- script -->
+
+<!-- <script src="jquery/jquery.min.js"></script> -->
+<!-- <script src="js/bootstrap.min.js"></script> -->
+<script src="https://kit.fontawesome.com/f47215da91.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<!-- <script src="js/bootstrap.bundle.min.js"></script> -->
+</body>
+</html>
+
+<!-- cari font, icon : fontawesome.com -->
