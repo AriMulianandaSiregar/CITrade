@@ -13,37 +13,25 @@ _**Fitur Akun Pengguna**_
 ### Langkah 3: Pilih Barang yang Ingin di Beli
 ![order Screen](https://github.com/AriMulianandaSiregar/CITrade/blob/main/Gambar%20Demo%20Aplikasi/home%20page.png)
 
-### Langkah 4: Masuk ke halaman Keranjang dan lakukan 
+### Langkah 4: Masuk ke halaman Keranjang
 ![cart Screen](https://github.com/AriMulianandaSiregar/CITrade/blob/main/Gambar%20Demo%20Aplikasi/cart%20page.png)
 
 ### Langkah 5: Lakukan Pembayaran
 ![payment Screen](https://github.com/AriMulianandaSiregar/Tiketa/blob/main/Gambar%20Demo%20Aplikasi/payment%20page.png)
 
-### Langkah 6: Pembayaran Berhasil
-![payment success Screen](https://github.com/AriMulianandaSiregar/Tiketa/blob/main/Gambar%20Demo%20Aplikasi/payment%20success%20page.png)
+### Langkah 6: Cek Detail History Pembelian
+![detail history Screen](https://github.com/AriMulianandaSiregar/Tiketa/blob/main/Gambar%20Demo%20Aplikasi/history%20page.png)
 
-### Langkah 7: Detail Tiket
-![detail ticket Screen](https://github.com/AriMulianandaSiregar/Tiketa/blob/main/Gambar%20Demo%20Aplikasi/detail%20ticket%20page.png)
-
-### Langkah 8: Histori Pembayaran yang Sudah Diselesaikan
-![paid Screen](https://github.com/AriMulianandaSiregar/Tiketa/blob/main/Gambar%20Demo%20Aplikasi/history%20paid%20page.png)
-
-### Langkah 9: Histori Pembayaran yang Belum Diselesaikan
-![unpaid Screen](https://github.com/AriMulianandaSiregar/Tiketa/blob/main/Gambar%20Demo%20Aplikasi/history%20unpaid%20page.png)
-
-### Langkah 10: Pengelolaan E- Wallet
-![e-wallet Screen](https://github.com/AriMulianandaSiregar/Tiketa/blob/main/Gambar%20Demo%20Aplikasi/wallet%20page.png)
-
-### Langkah 11: Pengelolaan Akun Pengguna
+### Langkah 7: Pengelolaan Akun Pengguna
 ![account Screen](https://github.com/AriMulianandaSiregar/Tiketa/blob/main/Gambar%20Demo%20Aplikasi/account%20page.png)
 
-### Langkah 12: Log Out
-![logout Screen](https://github.com/AriMulianandaSiregar/Tiketa/blob/main/Gambar%20Demo%20Aplikasi/logout%20page.png)
-
 _**Fitur Akun Admin**_
-### Langkah 1: Halaman Admin: Pengelolaan Maskapai
-![crud airlines Screen](https://github.com/AriMulianandaSiregar/Tiketa/blob/main/Gambar%20Demo%20Aplikasi/admin%20crud%20airlines%20page.png)
+### Langkah 1: Halaman Admin: Tambah Katagori
+![crud airlines Screen](https://github.com/AriMulianandaSiregar/Tiketa/blob/main/Gambar%20Demo%20Aplikasi/admin%20add%20catagory%20page.png)
 
-### Langkah 2: Halaman Admin: Pengelolaan Rute Penerbangan
-![crud rutes Screen](https://github.com/AriMulianandaSiregar/Tiketa/blob/main/Gambar%20Demo%20Aplikasi/admin%20crud%20detail%20rutes.png)
+### Langkah 2: Halaman Admin: Tambah Item
+![crud airlines Screen](https://github.com/AriMulianandaSiregar/Tiketa/blob/main/Gambar%20Demo%20Aplikasi/admin%20add%20item%20page.png)
+
+### Langkah 3: Halaman Admin: Edit Item
+![crud rutes Screen](https://github.com/AriMulianandaSiregar/Tiketa/blob/main/Gambar%20Demo%20Aplikasi/admin%20edit%20item%20page.png)
 
