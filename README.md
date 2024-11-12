@@ -32,9 +32,9 @@ _**Fitur Akun Admin**_
 ### Halaman Admin: Tambah Katagori
 ![crud airlines Screen](https://github.com/AriMulianandaSiregar/CITrade/blob/main/Gambar%20Demo%20Aplikasi/admin%20add%20catagory%20page.png)
 
-###Halaman Admin: Tambah Item
+### Halaman Admin: Tambah Item
 ![crud airlines Screen](https://github.com/AriMulianandaSiregar/CITrade/blob/main/Gambar%20Demo%20Aplikasi/admin%20add%20item%20page.png)
 
-###Halaman Admin: Edit Item
+### Halaman Admin: Edit Item
 ![crud rutes Screen](https://github.com/AriMulianandaSiregar/CITrade/blob/main/Gambar%20Demo%20Aplikasi/admin%20edit%20item%20page.png)
 
