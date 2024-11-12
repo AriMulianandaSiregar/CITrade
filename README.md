@@ -27,7 +27,7 @@ _**Fitur Akun Pengguna**_
 
 _**Fitur Akun Admin**_
 ### Halaman Admin: Beranda
-![crud airlines Screen](https://github.com/AriMulianandaSiregar/CITrade/blob/main/Gambar%20Demo%20Aplikasi/home%20page.png)
+![crud airlines Screen](https://github.com/AriMulianandaSiregar/CITrade/blob/main/Gambar%20Demo%20Aplikasi/admin%20home%20page.png)
 
 ### Halaman Admin: Tambah Katagori
 ![crud airlines Screen](https://github.com/AriMulianandaSiregar/CITrade/blob/main/Gambar%20Demo%20Aplikasi/admin%20add%20catagory%20page.png)
