@@ -1,5 +1,6 @@
 # DEMO WEB CITRADE
 _**ERD**_
+### Diagram ERD
 ![ERD](https://github.com/AriMulianandaSiregar/CITrade/blob/main/Gambar%20Demo%20Aplikasi/Final%20Project%20ERD.png)
 
 _**Fitur Akun Pengguna**_
