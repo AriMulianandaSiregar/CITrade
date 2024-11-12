@@ -26,12 +26,15 @@ _**Fitur Akun Pengguna**_
 ![account Screen](https://github.com/AriMulianandaSiregar/CITrade/blob/main/Gambar%20Demo%20Aplikasi/account%20page.png)
 
 _**Fitur Akun Admin**_
-### Langkah 1: Halaman Admin: Tambah Katagori
+### Halaman Admin: Beranda
+![crud airlines Screen](https://github.com/AriMulianandaSiregar/CITrade/blob/main/Gambar%20Demo%20Aplikasi/home%20page.png)
+
+### Halaman Admin: Tambah Katagori
 ![crud airlines Screen](https://github.com/AriMulianandaSiregar/CITrade/blob/main/Gambar%20Demo%20Aplikasi/admin%20add%20catagory%20page.png)
 
-### Langkah 2: Halaman Admin: Tambah Item
+###Halaman Admin: Tambah Item
 ![crud airlines Screen](https://github.com/AriMulianandaSiregar/CITrade/blob/main/Gambar%20Demo%20Aplikasi/admin%20add%20item%20page.png)
 
-### Langkah 3: Halaman Admin: Edit Item
+###Halaman Admin: Edit Item
 ![crud rutes Screen](https://github.com/AriMulianandaSiregar/CITrade/blob/main/Gambar%20Demo%20Aplikasi/admin%20edit%20item%20page.png)
 
