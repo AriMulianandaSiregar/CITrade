@@ -4,17 +4,17 @@ _**ERD**_
 ![ERD](https://github.com/AriMulianandaSiregar/CITrade/blob/main/Gambar%20Demo%20Aplikasi/Final%20Project%20ERD.png)
 
 _**Fitur Akun Pengguna**_
-### Langkah 1: register ke Aplikasi
-![Register Screen](https://github.com/AriMulianandaSiregar/Tiketa/blob/main/Gambar%20Demo%20Aplikasi/register%20page.png)
+### Langkah 1: register ke Web
+![Register Screen](https://github.com/AriMulianandaSiregar/CITrade/blob/main/Gambar%20Demo%20Aplikasi/register%20page.png)
 
-### Langkah 2: Login ke Aplikasi
-![Login Screen](https://github.com/AriMulianandaSiregar/Tiketa/blob/main/Gambar%20Demo%20Aplikasi/login%20page.png)
+### Langkah 2: Login ke Web
+![Login Screen](https://github.com/AriMulianandaSiregar/CITrade/blob/main/Gambar%20Demo%20Aplikasi/login%20page.png)
 
-### Langkah 3: Pilih Destinasi Tujuan
-![order Screen](https://github.com/AriMulianandaSiregar/Tiketa/blob/main/Gambar%20Demo%20Aplikasi/order%20page.png)
+### Langkah 3: Pilih Barang yang Ingin di Beli
+![order Screen](https://github.com/AriMulianandaSiregar/CITrade/blob/main/Gambar%20Demo%20Aplikasi/home%20page.png)
 
-### Langkah 4: Masuk ke History Transaksi
-![History Screen](https://github.com/AriMulianandaSiregar/Tiketa/blob/main/Gambar%20Demo%20Aplikasi/history%20all%20page.png)
+### Langkah 4: Masuk ke halaman Keranjang dan lakukan 
+![cart Screen](https://github.com/AriMulianandaSiregar/CITrade/blob/main/Gambar%20Demo%20Aplikasi/cart%20page.png)
 
 ### Langkah 5: Lakukan Pembayaran
 ![payment Screen](https://github.com/AriMulianandaSiregar/Tiketa/blob/main/Gambar%20Demo%20Aplikasi/payment%20page.png)
