@@ -1,8 +1,6 @@
-# DEMO WEB CITRADE
+# DEMO WEB CITRADE / CITRADE WEB DEMO / CITRADE 演示网站
 _**ERD**_
-### Diagram ERD
-### ERD diagram
-### ERD 图
+### Diagram ERD / ERD diagram / ERD 图
 ![ERD](https://github.com/AriMulianandaSiregar/CITrade/blob/main/Gambar%20Demo%20Aplikasi/Final%20Project%20ERD.png)
 
 _**Fitur Akun Pengguna / User Account Features / 用户帐户功能**_
